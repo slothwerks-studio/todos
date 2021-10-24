@@ -4,7 +4,7 @@ export const testName = (name) => {
     return false;
   }
   return true;
-}
+};
 
 // Sample todo items
 export const mockData = [

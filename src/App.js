@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { testName, mockData } from './helpers';
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
       ...prevState,
       show: true
     }));
-  }
+  };
 
   const handleCheckbox = (checked, index) => {
     const todosUpdate = [
@@ -31,7 +31,7 @@ function App() {
     todosUpdate.splice(index, 1, todoToUpdate);
 
     setTodos(todosUpdate);
-  }
+  };
 
   const handleEdit = (index) => {
     const todoToEdit = {
@@ -53,7 +53,7 @@ function App() {
       ...prevState,
       name: value
     }));
-  }
+  };
 
   const handleCancel = () => {
     setForm(prevState => ({
@@ -62,7 +62,7 @@ function App() {
       editIndex: null,
       name: ''
     }));
-  }
+  };
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -108,7 +108,7 @@ function App() {
 
     // Reset and close the form
     handleCancel();
-  }
+  };
 
   // Build a component for a todo item
   const Todo = (props) => {
@@ -130,7 +130,7 @@ function App() {
         </button>
       </div>
     );
-  }
+  };
 
   // Build todo list
   const todoList = (

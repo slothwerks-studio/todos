@@ -1,19 +1,19 @@
 /**
  * Validates a todo description; returns true if validation passes or false if not.
- * @param {string} name 
- * @returns {boolean}
+ * @param {string} name - the todo description
+ * @returns {boolean} validation result
  */
-export const testName = (name) => {
+export function testName (name) {
   if (!name.trim()) {
     return false;
   }
   return true;
-};
+}
 
 /**
  * @typedef {Object} TodoItem
- * @property {string} name
- * @property {number} due - ms since the UNIX Epoch
+ * @property {string} name - the todo description
+ * @property {number} due - milliseconds since Unix Epoch
  * @property {boolean} complete
  * @example
  * {
@@ -21,10 +21,9 @@ export const testName = (name) => {
  *   due: 1635112930151,
  *   complete: false
  * }
- * 
- * Some sample todo items
- * @type {TodoItem[]}
- */
+ */ 
+ 
+// Some sample todo items
 export const mockData = [
   {
     name: 'Create sample React project',
@@ -45,10 +44,10 @@ export const mockData = [
 
 /**
  * Build a todo object from a string name/description
- * @param {string} name 
- * @returns {TodoItem}
+ * @param {string} name - the todo description
+ * @returns {TodoItem} a todo object
  */
-export const buildTodo = (name) => {
+export function buildTodo (name) {
   const now = new Date().getTime();
   const due = now + 3600000;
   return {
@@ -56,4 +55,4 @@ export const buildTodo = (name) => {
     due,
     complete: false
   };
-};
+}

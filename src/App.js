@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+
 import { testName, mockData } from './helpers';
 
 function App() {
@@ -132,22 +134,29 @@ function App() {
     );
   };
 
+  // Add prop types for Todo component
+  Todo.propTypes = {
+    todo: PropTypes.shape({
+      name: PropTypes.string,
+      complete: PropTypes.bool,
+    }),
+    index: PropTypes.number.isRequired
+  };
+
   // Build todo list
   const todoList = (
-    todos.length > 0 ? todos.map((todo, index) => {
-      return <Todo todo={todo} key={index} index={index} />
-    }) : <p>Nothing to do!</p>
+    todos.length > 0 ? todos.map((todo, index) => <Todo todo={todo} key={index} index={index} />) : <p>Nothing to do!</p>
   );
 
   // Build form
-  const formTitle = form.editIndex !== null ? 'Edit Todo' : 'New Todo'
+  const formTitle = (form.editIndex !== null ? 'Edit Todo' : 'New Todo');
 
   const todoForm = (
     <form onSubmit={handleFormSubmit} style={styles.todoForm}>
       <h2>
         { formTitle }
       </h2>
-      <div style={styles.formInputs}>
+      <div>
         <label>
           Description:
           <input

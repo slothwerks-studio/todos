@@ -1,4 +1,8 @@
-// Test name for validity
+/**
+ * Validates a todo description; returns true if validation passes or false if not.
+ * @param {string} name 
+ * @returns {boolean}
+ */
 export const testName = (name) => {
   if (!name.trim()) {
     return false;
@@ -6,21 +10,50 @@ export const testName = (name) => {
   return true;
 };
 
-// Sample todo items
+/**
+ * @typedef {Object} TodoItem
+ * @property {string} name
+ * @property {number} due - ms since the UNIX Epoch
+ * @property {boolean} complete
+ * @example
+ * {
+ *   name: 'Something I need to do',
+ *   due: 1635112930151,
+ *   complete: false
+ * }
+ * 
+ * Some sample todo items
+ * @type {TodoItem[]}
+ */
 export const mockData = [
   {
     name: 'Create sample React project',
-    due: 1635102283457,
-    complete: false
+    due: 1635112930151,
+    complete: false,
   },
   {
     name: 'Upload to GitHub',
-    due: 1635102283457,
+    due: 1635112930151,
     complete: false
   },
   {
     name: 'Get some sleep',
-    due: 1635102283457,
+    due: 1635112930151,
     complete: false
   }
 ];
+
+/**
+ * Build a todo object from a string name/description
+ * @param {string} name 
+ * @returns {TodoItem}
+ */
+export const buildTodo = (name) => {
+  const now = new Date().getTime();
+  const due = now + 3600000;
+  return {
+    name,
+    due,
+    complete: false
+  };
+};

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { testName, mockData } from './helpers';
+import { testName, mockData, buildTodo } from './helpers';
 
 function App() {
   const [todos, setTodos] = useState(mockData);
@@ -95,10 +95,7 @@ function App() {
       setTodos(todosUpdate);
     } else {
       // We're adding a new todo
-      const newTodo = {
-        name: nameTrimmed,
-        complete: false
-      };
+      const newTodo = buildTodo(nameTrimmed);
 
       const todosUpdate = [
         ...todos,
@@ -137,8 +134,8 @@ function App() {
   // Add prop types for Todo component
   Todo.propTypes = {
     todo: PropTypes.shape({
-      name: PropTypes.string,
-      complete: PropTypes.bool,
+      name: PropTypes.string.isRequired,
+      complete: PropTypes.bool.isRequired,
     }),
     index: PropTypes.number.isRequired
   };

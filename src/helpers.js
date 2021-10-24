@@ -1,3 +1,12 @@
+// Test name for validity
+export const testName = (name) => {
+  if (!name.trim()) {
+    return false;
+  }
+  return true;
+}
+
+// Sample todo items
 export const mockData = [
   {
     name: 'Create sample React project',

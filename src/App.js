@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { mockData } from './helpers';
+import { testName, mockData } from './helpers';
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(mockData);
   const [form, setForm] = useState({
     show: false,
     editIndex: null,
@@ -38,11 +38,13 @@ function App() {
       ...todos[index]
     };
 
+    const { name } = todoToEdit;
+
     setForm(prevState => ({
       ...prevState,
       show: true,
       editIndex: index,
-      name: todoToEdit.name
+      name
     }));
   };
 
@@ -62,8 +64,17 @@ function App() {
     }));
   }
 
-  const handleFormSubmit = () => {
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+
     const { editIndex, name } = form;
+
+    if (!testName(name)) {
+      window.alert('Please enter a valid description for your todo.');
+      return;
+    }
+
+    const nameTrimmed = name.trim();
 
     if (editIndex !== null) {
       // We're in edit mode
@@ -75,7 +86,7 @@ function App() {
         ...todos[editIndex]
       };
   
-      todoToUpdate.name = name;
+      todoToUpdate.name = nameTrimmed;
   
       todosUpdate.splice(editIndex, 1, todoToUpdate);
   
@@ -83,7 +94,7 @@ function App() {
     } else {
       // We're adding a new todo
       const newTodo = {
-        name,
+        name: nameTrimmed,
         complete: false
       };
 
@@ -124,7 +135,7 @@ function App() {
   // Build todo list
   const todoList = (
     todos.length > 0 ? todos.map((todo, index) => {
-      return <Todo todo={todo} index={index} />
+      return <Todo todo={todo} key={index} index={index} />
     }) : <p>Nothing to do!</p>
   );
 
@@ -142,6 +153,7 @@ function App() {
           <input
             name="name"
             type="text"
+            value={form.name}
             onChange={(event) => handleName(event.target.value)}
           />
         </label>
@@ -183,21 +195,18 @@ const styles = {
     flex: 1
   },
 
-  todoItem: {
-
-  },
-
-  todoName: {
-
-  },
-
   todoForm: {
     flex: 1
   },
 
   todoItem: {
+    display: 'flex',
+    alignItems: 'center'
+  },
 
-  }
+  todoName: {
+    marginRight: 10
+  },
 
 };
 

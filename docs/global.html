@@ -1,25 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>JSDoc: Global</title>
 
-    <script src="scripts/prettify/prettify.js"> </script>
-    <script src="scripts/prettify/lang-css.js"> </script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Global</title>
+
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="./build/entry.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700|Inconsolata,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="https://jmblog.github.io/color-themes-for-google-code-prettify/themes/tomorrow-night.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/app.min.css">
+  <link type="text/css" rel="stylesheet" href="styles/iframe.css">
+  <link type="text/css" rel="stylesheet" href="">
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  
 </head>
 
-<body>
 
-<div id="main">
 
-    <h1 class="page-title">Global</h1>
-
+<body class="layout small-header">
+    <div id="stickyNavbarOverlay"></div>
     
+
+<div class="top-nav">
+    <div class="inner">
+        <a id="hamburger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+        <div class="logo">
+            
+             
+                <a href="index.html">
+                    <h1 class="navbar-item">Todo List</h1>
+                </a>
+            
+        </div>
+        <div class="menu">
+            
+            <div class="navigation">
+                <a
+                    href="index.html"
+                    class="link"
+                >
+                    API Documentation
+                </a>
+                
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="main">
+        <div
+            class="sidebar "
+            id="sidebarNav"
+        >
+            
+            <nav>
+                
+                    <h2><a href="index.html">Documentation</a></h2><div class="category"><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#buildTodo">buildTodo</a></li><li><a href="global.html#testName">testName</a></li><li><a href="global.html#Todo">Todo</a></li></ul></div>
+                
+            </nav>
+        </div>
+        <div class="core" id="main-content-wrapper">
+            <div class="content">
+                <header class="page-title">
+                    <p>Title</p>
+                    <h1>Global</h1>
+                </header>
+                
 
 
 
@@ -66,7 +127,6 @@
     
 
     
-
     
 
     
@@ -80,7 +140,7 @@
         
     
     </div>
-
+    
     
 
     
@@ -96,80 +156,38 @@
     
 
     
-        <h3 class="subsection-title">Methods</h3>
+        <div class='vertical-section'>
+            <h1>Methods</h1>
+            <div class="members">
+            
+                <div class="member">
 
+
+    
+    <h4 class="name" id="App">
+        <a class="href-link" href="#App">#</a>
         
+        <span class="code-name">
             
-
+                App<span class="signature">()</span><span class="type-signature"> &rarr; {React.FC}</span>
+            
+        </span>
+    </h4>
     
 
     
-    <h4 class="name" id="buildTodo"><span class="type-signature"></span>buildTodo<span class="signature">(name)</span><span class="type-signature"> &rarr; {<a href="global.html#TodoItem">TodoItem</a>}</span></h4>
+    
+    <div class="description">
+        <p>App.js</p>
+    </div>
     
 
-    
-
-
-
-<div class="description">
-    Build a todo object from a string name/description
-</div>
 
 
 
 
 
 
-
-
-
-    <h5>Parameters:</h5>
-    
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>name</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">the todo description</td>
-        </tr>
-
-    
-    </tbody>
-</table>
 
 
 
@@ -201,18 +219,19 @@
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="helpers.js.html">helpers.js</a>, <a href="helpers.js.html#line50">line 50</a>
-    </li></ul></dd>
     
 
     
 
     
 
+    
+        <p class="tag-source">
+            <a href="App.js.html" class="button">View Source</a>
+            <span>
+                <a href="App.js.html">App.js</a>, <a href="App.js.html#line11">line 11</a>
+            </span>
+        </p>
     
 </dl>
 
@@ -230,49 +249,233 @@
 
 
 
-<h5>Returns:</h5>
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>React functional component</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
+        
+<span class="param-type">React.FC</span>
+
+
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="buildTodo">
+        <a class="href-link" href="#buildTodo">#</a>
+        
+        <span class="code-name">
+            
+                buildTodo<span class="signature">(name)</span><span class="type-signature"> &rarr; {<a href="global.html#TodoItem">TodoItem</a>}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Build a todo object from a string name/description</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>name</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">string</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"><p>the todo description</p></td>
+</tr>
+
 
         
-<div class="param-desc">
-    a todo object
+        </tbody>
+    </table>
 </div>
 
 
 
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="helpers.js.html" class="button">View Source</a>
+            <span>
+                <a href="helpers.js.html">helpers.js</a>, <a href="helpers.js.html#line50">line 50</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>a todo object</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
         
 <span class="param-type"><a href="global.html#TodoItem">TodoItem</a></span>
 
 
-    </dd>
-</dl>
-
+    </div>
     
-
-
-
-
-
-        
-            
-
-    
-
-    
-    <h4 class="name" id="testName"><span class="type-signature"></span>testName<span class="signature">(name)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
-    
-
-    
-
-
-
-<div class="description">
-    Validates a todo description; returns true if validation passes or false if not.
 </div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="testName">
+        <a class="href-link" href="#testName">#</a>
+        
+        <span class="code-name">
+            
+                testName<span class="signature">(name)</span><span class="type-signature"> &rarr; {boolean}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Validates a todo description; returns true if validation passes or false if not.</p>
+    </div>
+    
 
 
 
@@ -284,52 +487,54 @@
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="params table">
+        <thead>
         <tr>
             
-                <td class="name"><code>name</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
+            <th>Type</th>
+
             
-                
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>name</code></td>
+  
+
+  <td class="type">
+  
+      
 <span class="param-type">string</span>
 
 
-            
-            </td>
+  
+  </td>
 
-            
+  
 
-            
+  
 
-            <td class="description last">the todo description</td>
-        </tr>
+  <td class="description last"><p>the todo description</p></td>
+</tr>
 
-    
-    </tbody>
-</table>
 
+        
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -360,18 +565,19 @@
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="helpers.js.html">helpers.js</a>, <a href="helpers.js.html#line6">line 6</a>
-    </li></ul></dd>
     
 
     
 
     
 
+    
+        <p class="tag-source">
+            <a href="helpers.js.html" class="button">View Source</a>
+            <span>
+                <a href="helpers.js.html">helpers.js</a>, <a href="helpers.js.html#line6">line 6</a>
+            </span>
+        </p>
     
 </dl>
 
@@ -389,44 +595,560 @@
 
 
 
-<h5>Returns:</h5>
-
-        
-<div class="param-desc">
-    validation result
-</div>
 
 
 
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
+    
+    <div class='param-desc column is-7'><p>validation result</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
         
 <span class="param-type">boolean</span>
 
 
-    </dd>
+    </div>
+    
+</div>
+
+                
+        </div>
+    </div>
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="Todo">
+        <a class="href-link" href="#Todo">#</a>
+        
+        <span class="code-name">
+            
+                Todo<span class="signature">(props)</span><span class="type-signature"> &rarr; {React.FC}</span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Builds a todo list item</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>props</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type"><a href="global.html#TodoComponentProps">TodoComponentProps</a></span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="components_Todo.js.html" class="button">View Source</a>
+            <span>
+                <a href="components_Todo.js.html">components/Todo.js</a>, <a href="components_Todo.js.html#line31">line 31</a>
+            </span>
+        </p>
+    
 </dl>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class='columns method-parameter'>
+        <div class="column is-2"><label>Returns:</label></div>
+        <div class="column is-10">
+            
+                    
+
+<div class="columns">
     
-
-
-
-
-
+    <div class='param-desc column is-7'><p>React functional component</p></div>
+    
+    
+    <div class='column is-5 has-text-left'>
+        <label>Type: </label>
         
-    
+<span class="param-type">React.FC</span>
 
-    
-        <h3 class="subsection-title">Type Definitions</h3>
 
-        
+    </div>
+    
+</div>
+
                 
-<h4 class="name" id="TodoComponentProps">TodoComponentProps</h4>
+        </div>
+    </div>
 
 
+
+
+</div>
+            
+            </div>
+        </div>
+    
+
+    
+        <div class='vertical-section'>
+            <h1>Type Definitions</h1>
+            <div class="members">
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="handleCheckbox">
+        <a class="href-link" href="#handleCheckbox">#</a>
+        
+        <span class="code-name">
+            
+                handleCheckbox<span class="signature">(checked, index)</span><span class="type-signature"></span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Handler for todo item checkbox</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>checked</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">boolean</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"></td>
+</tr>
+
+
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>index</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">number</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="components_Todo.js.html" class="button">View Source</a>
+            <span>
+                <a href="components_Todo.js.html">components/Todo.js</a>, <a href="components_Todo.js.html#line4">line 4</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+
+    
+    <h4 class="name" id="handleEdit">
+        <a class="href-link" href="#handleEdit">#</a>
+        
+        <span class="code-name">
+            
+                handleEdit<span class="signature">(index)</span><span class="type-signature"></span>
+            
+        </span>
+    </h4>
+    
+
+    
+    
+    <div class="description">
+        <p>Handler for todo item edit button</p>
+    </div>
+    
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+<div class="table-container">
+    <table class="params table">
+        <thead>
+        <tr>
+            
+            <th>Name</th>
+            
+
+            <th>Type</th>
+
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+
+            
+<tr class="deep-level-0">
+  
+      <td class="name"><code>index</code></td>
+  
+
+  <td class="type">
+  
+      
+<span class="param-type">number</span>
+
+
+  
+  </td>
+
+  
+
+  
+
+  <td class="description last"></td>
+</tr>
+
+
+        
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+
+    
+
+    
+
+    
+        <p class="tag-source">
+            <a href="components_Todo.js.html" class="button">View Source</a>
+            <span>
+                <a href="components_Todo.js.html">components/Todo.js</a>, <a href="components_Todo.js.html#line11">line 11</a>
+            </span>
+        </p>
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+            
+                <div class="member">
+
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
+<span class="param-type">object</span>
+
+
+    </span>
+
+<h4 class="name" id="TodoComponentProps">
+    <a class="href-link" href="#TodoComponentProps">#</a>
+    
+    <span class="code-name">
+        TodoComponentProps
+    </span>
+    
+</h4>
 
 
 
@@ -438,75 +1160,121 @@
     <h5 class="subsection-title">Properties:</h5>
 
     
-
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="props table">
+        <thead>
         <tr>
             
-                <td class="name"><code>todo</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
+            <th>Type</th>
+
             
-                
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>todo</code></td>
+    
+
+    <td class="type">
+    
+        
 <span class="param-type"><a href="global.html#TodoItem">TodoItem</a></span>
 
 
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
+    
+    </td>
 
     
 
-        <tr>
-            
-                <td class="name"><code>index</code></td>
-            
+    
 
-            <td class="type">
+    <td class="description last"></td>
+</tr>
+
+        
             
-                
+<tr class="deep-level-0">
+    
+        <td class="name"><code>index</code></td>
+    
+
+    <td class="type">
+    
+        
 <span class="param-type">number</span>
 
 
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
+    
+    </td>
 
     
-    </tbody>
-</table>
 
+    
+
+    <td class="description last"></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>handleCheckbox</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="global.html#handleCheckbox">handleCheckbox</a></span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>handleEdit</code></td>
+    
+
+    <td class="type">
+    
+        
+<span class="param-type"><a href="global.html#handleEdit">handleEdit</a></span>
+
+
+    
+    </td>
+
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+        
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -535,18 +1303,19 @@
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="App.js.html">App.js</a>, <a href="App.js.html#line112">line 112</a>
-    </li></ul></dd>
     
 
     
 
     
 
+    
+        <p class="tag-source">
+            <a href="components_Todo.js.html" class="button">View Source</a>
+            <span>
+                <a href="components_Todo.js.html">components/Todo.js</a>, <a href="components_Todo.js.html#line17">line 17</a>
+            </span>
+        </p>
     
 </dl>
 
@@ -554,25 +1323,29 @@
 
 
 
-
+</div>
             
-                
-<h4 class="name" id="TodoItem">TodoItem</h4>
+                <div class="member">
 
-
-
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
+    <span class="method-parameter is-pulled-right">
+        <label>Type:</label>
+        
 <span class="param-type">Object</span>
 
 
-        </li>
-    </ul>
+    </span>
+
+<h4 class="name" id="TodoItem">
+    <a class="href-link" href="#TodoItem">#</a>
+    
+    <span class="code-name">
+        TodoItem
+    </span>
+    
+</h4>
+
+
+
 
 
 
@@ -581,98 +1354,120 @@
     <h5 class="subsection-title">Properties:</h5>
 
     
-
-<table class="props">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
+<div class="table-container">
+    <table class="props table">
+        <thead>
         <tr>
             
-                <td class="name"><code>name</code></td>
+            <th>Name</th>
             
 
-            <td class="type">
+            <th>Type</th>
+
             
-                
+            <th>Attributes</th>
+            
+
+            
+
+            <th class="last">Description</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        
+            
+<tr class="deep-level-0">
+    
+        <td class="name"><code>name</code></td>
+    
+
+    <td class="type">
+    
+        
 <span class="param-type">string</span>
 
 
-            
-            </td>
+    
+    </td>
 
-            
+    
+        <td class="attributes">
+        
 
-            
-
-            <td class="description last">the todo description</td>
-        </tr>
+        
+        </td>
+    
 
     
 
-        <tr>
-            
-                <td class="name"><code>due</code></td>
-            
+    <td class="description last"><p>the todo description</p></td>
+</tr>
 
-            <td class="type">
+        
             
-                
+<tr class="deep-level-0">
+    
+        <td class="name"><code>due</code></td>
+    
+
+    <td class="type">
+    
+        
 <span class="param-type">number</span>
 
 
-            
-            </td>
+    
+    </td>
 
-            
+    
+        <td class="attributes">
+        
+            &lt;optional><br>
+        
 
-            
-
-            <td class="description last">milliseconds since Unix Epoch</td>
-        </tr>
+        
+        </td>
+    
 
     
 
-        <tr>
-            
-                <td class="name"><code>complete</code></td>
-            
+    <td class="description last"><p>milliseconds since Unix Epoch</p></td>
+</tr>
 
-            <td class="type">
+        
             
-                
+<tr class="deep-level-0">
+    
+        <td class="name"><code>complete</code></td>
+    
+
+    <td class="type">
+    
+        
 <span class="param-type">boolean</span>
 
 
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
+    
+    </td>
 
     
-    </tbody>
-</table>
+        <td class="attributes">
+        
 
+        
+        </td>
+    
+
+    
+
+    <td class="description last"></td>
+</tr>
+
+        
+        </tbody>
+    </table>
+</div>
 
 
 
@@ -701,18 +1496,19 @@
     
 
     
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="helpers.js.html">helpers.js</a>, <a href="helpers.js.html#line13">line 13</a>
-    </li></ul></dd>
     
 
     
 
     
 
+    
+        <p class="tag-source">
+            <a href="helpers.js.html" class="button">View Source</a>
+            <span>
+                <a href="helpers.js.html">helpers.js</a>, <a href="helpers.js.html#line13">line 13</a>
+            </span>
+        </p>
     
 </dl>
 
@@ -722,15 +1518,19 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>{
+    
+        <pre class="prettyprint"><code>{
   name: 'Something I need to do',
   due: 1635112930151,
   complete: false
 }</code></pre>
+    
 
 
-
+</div>
             
+            </div>
+        </div>
     
 
     
@@ -741,19 +1541,25 @@
 
 
 
-</div>
-
-<nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#buildTodo">buildTodo</a></li><li><a href="global.html#testName">testName</a></li></ul>
-</nav>
-
-<br class="clear">
-
-<footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.7</a> on Sun Oct 24 2021 18:52:33 GMT-0400 (Eastern Daylight Time)
-</footer>
-
-<script> prettyPrint(); </script>
+            </div>
+            
+            <footer class="footer">
+                <div class="content has-text-centered">
+                    <p>Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a></p>
+                    <p class="sidebar-created-by">
+                        <a href="https://github.com/SoftwareBrothers/better-docs" target="_blank">BetterDocs theme</a> provided with <i class="fas fa-heart"></i> by 
+                        <a href="http://softwarebrothers.co" target="_blank">SoftwareBrothers - JavaScript Development Agency</a>
+                    </p>
+                </div>
+            </footer>
+            
+        </div>
+        <div id="side-nav" class="side-nav">
+        </div>
+    </div>
+<script src="scripts/app.min.js"></script>
+<script>PR.prettyPrint();</script>
 <script src="scripts/linenumber.js"> </script>
+
 </body>
 </html>

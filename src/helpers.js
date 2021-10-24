@@ -13,7 +13,7 @@ export function testName (name) {
 /**
  * @typedef {Object} TodoItem
  * @property {string} name - the todo description
- * @property {number} due - milliseconds since Unix Epoch
+ * @property {number} [due] - milliseconds since Unix Epoch
  * @property {boolean} complete
  * @example
  * {

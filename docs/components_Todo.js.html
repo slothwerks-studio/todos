@@ -7,7 +7,7 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> App.js</title>
+  <title> components/Todo.js</title>
 
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -80,7 +80,7 @@
             <div class="content">
                 <header class="page-title">
                     <p>Source</p>
-                    <h1>App.js</h1>
+                    <h1>components/Todo.js</h1>
                 </header>
                 
 
@@ -89,181 +89,68 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import React, { useState } from 'react';
-
-import Todo from './components/Todo';
-
-import { testName, mockData, buildTodo } from './helpers';
+            <pre class="prettyprint source linenums"><code>import React from 'react';
+import PropTypes from 'prop-types';
 
 /**
- * App.js
+ * Handler for todo item checkbox
+ * @callback handleCheckbox
+ * @param {boolean} checked
+ * @param {number} index
+ */
+
+/**
+ * Handler for todo item edit button
+ * @callback handleEdit
+ * @param {number} index
+ */
+
+/**
+ * @typedef TodoComponentProps
+ * @type {object}
+ * @property {TodoItem} todo
+ * @property {number} index
+ * @property {handleCheckbox} handleCheckbox
+ * @property {handleEdit} handleEdit
+ */
+
+/**
+ * Builds a todo list item
+ * @param {TodoComponentProps} props 
  * @returns {React.FC} React functional component
  */
-function App() {
-  const [todos, setTodos] = useState(mockData);
-  const [form, setForm] = useState({
-    show: false,
-    editIndex: null,
-    name: ''
-  });
-
-  // Build handlers
-  const handleAddTodo = () => {
-    setForm(prevState => ({
-      ...prevState,
-      show: true
-    }));
-  };
-
-  const handleCheckbox = (checked, index) => {
-    const todosUpdate = [
-      ...todos
-    ];
-    
-    const todoToUpdate = {
-      ...todos[index]
-    };
-
-    todoToUpdate.complete = checked;
-
-    todosUpdate.splice(index, 1, todoToUpdate);
-
-    setTodos(todosUpdate);
-  };
-
-  const handleEdit = (index) => {
-    const todoToEdit = {
-      ...todos[index]
-    };
-
-    const { name } = todoToEdit;
-
-    setForm(prevState => ({
-      ...prevState,
-      show: true,
-      editIndex: index,
-      name
-    }));
-  };
-
-  const handleName = (value) => {
-    setForm(prevState => ({
-      ...prevState,
-      name: value
-    }));
-  };
-
-  const handleCancel = () => {
-    setForm(prevState => ({
-      ...prevState,
-      show: false,
-      editIndex: null,
-      name: ''
-    }));
-  };
-
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
-
-    const { editIndex, name } = form;
-
-    if (!testName(name)) {
-      window.alert('Please enter a valid description for your todo.');
-      return;
-    }
-
-    const nameTrimmed = name.trim();
-
-    if (editIndex !== null) {
-      // We're in edit mode
-      const todosUpdate = [
-        ...todos
-      ];
-      
-      const todoToUpdate = {
-        ...todos[editIndex]
-      };
-  
-      todoToUpdate.name = nameTrimmed;
-  
-      todosUpdate.splice(editIndex, 1, todoToUpdate);
-  
-      setTodos(todosUpdate);
-    } else {
-      // We're adding a new todo
-      const newTodo = buildTodo(nameTrimmed);
-
-      const todosUpdate = [
-        ...todos,
-        newTodo
-      ];
-
-      setTodos(todosUpdate);
-    }
-
-    // Reset and close the form
-    handleCancel();
-  };
-
-  // Build todo list
-  const todoItems = todos.map((todo, index) => {
-    return (
-      &lt;Todo
-        todo={todo} 
-        key={index} 
-        index={index} 
-        handleCheckbox={handleCheckbox} 
-        handleEdit={handleEdit} 
-      />
-    );
-  });
-
-  const todoList = (todos.length > 0 ? todoItems : &lt;p>Nothing to do!&lt;/p>);
-
-  // Build form
-  const formTitle = (form.editIndex !== null ? 'Edit Todo' : 'New Todo');
-
-  const todoForm = (
-    &lt;form onSubmit={handleFormSubmit} style={styles.todoForm}>
-      &lt;h2>
-        { formTitle }
-      &lt;/h2>
-      &lt;div>
-        &lt;label>
-          Description:
-          &lt;input
-            name="name"
-            type="text"
-            value={form.name}
-            onChange={(event) => handleName(event.target.value)}
-          />
-        &lt;/label>
-      &lt;/div>
-      &lt;button type="button" onClick={handleCancel}>
-        Cancel
-      &lt;/button>
-      &lt;button type="submit">
-        Save
-      &lt;/button>
-    &lt;/form>
-  );
-  
+const Todo = (props) => {
+  const { todo, index, handleCheckbox, handleEdit } = props;
+  const isComplete = todo.complete;
   return (
-    &lt;div>
-      &lt;h1>My Todo List&lt;/h1>
-      &lt;button onClick={handleAddTodo}>
-        Add Todo
+    &lt;div style={styles.todoItem}>
+      &lt;input
+        name="isComplete"
+        type="checkbox"
+        checked={isComplete}
+        onChange={(event) => handleCheckbox(event.target.checked, index)}
+      />
+      &lt;span style={styles.todoName}>
+        { todo.name }
+      &lt;/span>
+      &lt;button type="button" onClick={() => handleEdit(index)}>
+        Edit
       &lt;/button>
-      &lt;div style={styles.contentWrapper}>
-        &lt;div style={styles.todoList}>
-          &lt;h2>Stuff to do&lt;/h2>
-          { todoList }
-        &lt;/div>
-        { form.show ? todoForm : null }
-      &lt;/div>
     &lt;/div>
   );
-}
+};
+
+// Add prop types for Todo component
+Todo.propTypes = {
+  todo: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    due: PropTypes.number,
+    complete: PropTypes.bool.isRequired,
+  }),
+  index: PropTypes.number.isRequired,
+  handleCheckbox: PropTypes.func,
+  handleEdit: PropTypes.func
+};
 
 const styles = {
 
@@ -291,7 +178,7 @@ const styles = {
 
 };
 
-export default App;
+export default Todo;
 </code></pre>
         </article>
     </section>

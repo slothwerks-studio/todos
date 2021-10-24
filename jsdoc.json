@@ -1,8 +1,7 @@
 {
-  "plugins": [],
-  "recurseDepth": 10,
+  "plugins": ["plugins/markdown", "better-docs/component"],
   "source": {
-    "include": ["src"],
+    "include": ["./src"],
     "includePattern": ".+\\.js(doc|x)?$",
     "excludePattern": "(^|\\/|\\\\)_"
   },
@@ -12,12 +11,15 @@
     "dictionaries": ["jsdoc", "closure"]
   },
   "templates": {
-    "cleverLinks": false,
-    "monospaceLinks": false
+    "better-docs": {
+      "name": "Todo List"
+    }
   },
   "opts": {
     "destination": "docs",
     "recurse": true,
-    "readme": "README.md"
+    "readme": "README.md",
+    "verbose": true,
+    "template": "./node_modules/better-docs"
   }
 }

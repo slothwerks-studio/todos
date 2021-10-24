@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+
+import Todo from './components/Todo';
 
 import { testName, mockData, buildTodo } from './helpers';
 
+/**
+ * App.js
+ * @returns {React.FC} React functional component
+ */
 function App() {
   const [todos, setTodos] = useState(mockData);
   const [form, setForm] = useState({
@@ -109,52 +114,20 @@ function App() {
     handleCancel();
   };
 
-  /**
-   * @typedef TodoComponentProps
-   * @property {TodoItem} todo
-   * @property {number} index
-   */
-
-  /**
-   * Builds a todo list item
-   * @param {TodoComponentProps} props 
-   * @returns {React.FC} React functional component
-   */
-  const Todo = (props) => {
-    const { todo, index } = props;
-    const isComplete = todo.complete;
-    return (
-      <div style={styles.todoItem}>
-        <input
-          name="isComplete"
-          type="checkbox"
-          checked={isComplete}
-          onChange={(event) => handleCheckbox(event.target.checked, index)}
-        />
-        <span style={styles.todoName}>
-          { todo.name }
-        </span>
-        <button type="button" onClick={() => handleEdit(index)}>
-          Edit
-        </button>
-      </div>
-    );
-  };
-
-  // Add prop types for Todo component
-  Todo.propTypes = {
-    todo: PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      due: PropTypes.number,
-      complete: PropTypes.bool.isRequired,
-    }),
-    index: PropTypes.number.isRequired
-  };
-
   // Build todo list
-  const todoList = (
-    todos.length > 0 ? todos.map((todo, index) => <Todo todo={todo} key={index} index={index} />) : <p>Nothing to do!</p>
-  );
+  const todoItems = todos.map((todo, index) => {
+    return (
+      <Todo
+        todo={todo} 
+        key={index} 
+        index={index} 
+        handleCheckbox={handleCheckbox} 
+        handleEdit={handleEdit} 
+      />
+    );
+  });
+
+  const todoList = (todos.length > 0 ? todoItems : <p>Nothing to do!</p>);
 
   // Build form
   const formTitle = (form.editIndex !== null ? 'Edit Todo' : 'New Todo');
